@@ -2,8 +2,8 @@ from node import MemberNode
 
 
 class GroupLinkedList:
-    def __init__(self, node):
-        self.head_node = node
+    def __init__(self, value=None):
+        self.head_node = MemberNode(value)
 
     def get_head_node(self):
         return self.head_node
@@ -13,7 +13,7 @@ class GroupLinkedList:
 
     def insert_beginning(self, value):
         new_node = MemberNode(value)
-        new_node.set_next_node(self.get_head_node)
+        new_node.set_next_node(self.get_head_node())
         self.set_head_node(new_node)
 
     def stringify_list(self):
@@ -25,11 +25,10 @@ class GroupLinkedList:
         return string_list
 
 
-son2 = MemberNode("Gimoon")
-son1 = MemberNode("Gichan", son2)
-mother = MemberNode("MK", son1)
-father = MemberNode("Dr Lee", mother)
+family = GroupLinkedList("Gimoon")
+family.insert_beginning("Gichan")
+family.insert_beginning("MK")
+family.insert_beginning("Father")
 
-family = GroupLinkedList(father)
 print(family.stringify_list())
 
