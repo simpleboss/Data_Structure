@@ -24,6 +24,15 @@ class GroupLinkedList:
             current_node = current_node.get_next_node()
         return string_list
 
+    def remove_node(self, value):
+        current_node = self.get_head_node()
+        while current_node:
+            next_node = current_node.get_next_node()
+            if next_node.get_value() == value:
+                current_node.set_next_node(next_node.get_next_node())
+                return
+            current_node = current_node.get_next_node()
+
 
 family = GroupLinkedList("Gimoon")
 family.insert_beginning("Gichan")
@@ -32,3 +41,7 @@ family.insert_beginning("Father")
 
 print(family.stringify_list())
 
+family.remove_node("MK")
+
+print("========")
+print(family.stringify_list())
