@@ -10,7 +10,7 @@ class Stack:
     def push(self, value):
         if not self.is_full():
             new_node = Node(value)
-            new_node.get_next_node(self.top_item)
+            new_node.set_next_node(self.top_item)
             self.top_item = new_node
             self.size += 1
 
