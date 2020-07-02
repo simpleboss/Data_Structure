@@ -8,7 +8,12 @@ class Stacks:
         self.limit = limit
 
     def push(self, value):
-        pass
+        if not self.is_full():
+            new_node = Node(value)
+            self.top_item = new_node
+            self.size += 1
+        else:
+            print("Stacks is full")
 
     def pop(self):
         pass
@@ -21,3 +26,7 @@ class Stacks:
 
     def is_empty(self):
         return self.size == 0
+
+
+stacks = Stacks(10)
+stacks.push("one card")
