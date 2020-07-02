@@ -1,9 +1,9 @@
-from node import MemberNode
+from node import Node
 
 
 class GroupLinkedList:
     def __init__(self, value=None):
-        self.head_node = MemberNode(value)
+        self.head_node = Node(value)
 
     def get_head_node(self):
         return self.head_node
@@ -12,7 +12,7 @@ class GroupLinkedList:
         self.head_node = node
 
     def insert_beginning(self, value):
-        new_node = MemberNode(value)
+        new_node = Node(value)
         new_node.set_next_node(self.get_head_node())
         self.set_head_node(new_node)
 

@@ -1,7 +1,7 @@
 from node import Node
 
 
-class Stacks:
+class Stack:
     def __init__(self, limit):
         self.top_item = None
         self.size = 0
@@ -32,7 +32,7 @@ class Stacks:
         return self.size == 0
 
 
-stacks = Stacks(10)
-stacks.push("one card")
-stacks.pop()
+stack = Stack(10)
+stack.push("one card")
+stack.pop()
 

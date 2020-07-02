@@ -1,4 +1,4 @@
-class MemberNode:
+class Node:
     def __init__(self, value, next_node=None):
         self.value = value
         self.next_node = next_node
@@ -13,10 +13,10 @@ class MemberNode:
         self.next_node = next_node
 
 
-father = MemberNode("Dr Lee")
-mother = MemberNode("MK")
-son1 = MemberNode("Gichan")
-son2 = MemberNode("Gimoon")
+father = Node("Dr Lee")
+mother = Node("MK")
+son1 = Node("Gichan")
+son2 = Node("Gimoon")
 
 father.set_next_node(mother)
 mother.set_next_node(son1)
