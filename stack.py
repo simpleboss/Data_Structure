@@ -45,4 +45,7 @@ stack.push("second card")
 stack.push("third card")
 print(stack.pop())
 print(stack.peek())
+print(stack.pop())
+print(stack.pop())
+print(stack.pop())
 
