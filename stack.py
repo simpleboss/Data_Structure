@@ -16,7 +16,11 @@ class Stacks:
             print("Stacks is full")
 
     def pop(self):
-        pass
+        if not self.is_empty():
+            self.size -= 1
+            return self.top_item
+        else:
+            print("Stack is empty")
 
     def peek(self):
         pass
@@ -30,3 +34,5 @@ class Stacks:
 
 stacks = Stacks(10)
 stacks.push("one card")
+stacks.pop()
+
