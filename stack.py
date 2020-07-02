@@ -21,6 +21,7 @@ class Stack:
         if not self.is_empty():
             self.size -= 1
             return_item = self.top_item
+            self.top_item = return_item.get_next_node()
             return return_item.get_value()
         else:
             print("Stack is empty")
