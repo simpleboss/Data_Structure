@@ -13,7 +13,6 @@ class Stack:
             new_node.set_next_node(self.top_item)
             self.top_item = new_node
             self.size += 1
-
         else:
             print("Stacks is full")
 
