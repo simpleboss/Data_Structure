@@ -20,13 +20,10 @@ for i in range(the_number_of_disks, 0, -1):
 
 
 # display current position of disks on a rob
-def display_current_position_of_disks(rob):
-    print('{:10}'.format(rob.name), end=" ")
-    print(": "+str(rob.list_of_nodes()))
-
-
-for rob in robs_list:
-    display_current_position_of_disks(rob)
+def display_current_position_of_disks_on_robs():
+    for rob in robs_list:
+        print('{:10}'.format(rob.name), end=" ")
+        print(": "+str(rob.list_of_nodes()))
 
 
 # user의 input을 받는 method
@@ -42,6 +39,8 @@ def input_the_rob():
 
 
 while robs_list[-1].size != the_number_of_disks:
+    display_current_position_of_disks_on_robs()
+
     print("What robs do you want to pick disk from?")
     rob_chosen_for_pickup = input_the_rob()
 
