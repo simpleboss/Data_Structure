@@ -2,8 +2,9 @@ from node import Node
 
 
 class Stack:
-    def __init__(self, limit):
+    def __init__(self, name, limit):
         self.top_item = None
+        self.name = name
         self.size = 0
         self.limit = limit
 
@@ -47,10 +48,10 @@ class Stack:
         return self.size == 0
 
 
-stack = Stack(10)
-stack.push("first card")
-stack.push("second card")
-stack.push("third card")
+# stack = Stack(10)
+# stack.push("first card")
+# stack.push("second card")
+# stack.push("third card")
 # print(stack.pop())
 # print(stack.peek())
 # print(stack.pop())

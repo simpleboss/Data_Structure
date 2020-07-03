@@ -1,9 +1,9 @@
 from stack import Stack
 
 # Create Three robs Stacks
-left_rob = Stack(100)
-middle_rob = Stack(100)
-right_rob = Stack(100)
+left_rob = Stack("Left rob", 100)
+middle_rob = Stack("Middle rob", 100)
+right_rob = Stack("Right rob", 100)
 
 robs_list = [left_rob, middle_rob, right_rob]
 
@@ -19,3 +19,11 @@ for i in range(the_number_of_disks, 0, -1):
     left_rob.push(i)
 
 
+# display current position of disks on a rob
+def display_current_position_of_disks(rob):
+    print('{:10}'.format(rob.name), end=" ")
+    print(": "+str(rob.list_of_nodes()))
+
+
+for rob in robs_list:
+    display_current_position_of_disks(rob)
