@@ -31,6 +31,15 @@ class Stack:
         else:
             print("Stack is empty")
 
+    def list_of_nodes(self):
+        current_node = self.top_item
+        result = []
+        while current_node:
+            result.append(current_node.get_value())
+            current_node = current_node.get_next_node()
+        result.reverse()
+        return result
+
     def is_full(self):
         return self.limit <= self.size
 
@@ -47,4 +56,4 @@ stack.push("third card")
 # print(stack.pop())
 # print(stack.pop())
 # print(stack.pop())
-
+# print(stack.list_of_nodes())
