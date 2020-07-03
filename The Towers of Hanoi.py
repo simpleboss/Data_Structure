@@ -27,3 +27,17 @@ def display_current_position_of_disks(rob):
 
 for rob in robs_list:
     display_current_position_of_disks(rob)
+
+
+# user의 input을 받는 method
+def input_the_rob():
+    user_input = input()
+    first_letter_of_robs_list = [rob.name[0] for rob in robs_list]
+    while user_input not in first_letter_of_robs_list:
+        print("Input the first letter of the rob")
+        user_input = input()
+    for rob in robs_list:
+        if user_input == rob.name[0]:
+            return rob
+
+print(input_the_rob())
