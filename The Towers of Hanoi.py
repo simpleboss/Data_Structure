@@ -8,8 +8,8 @@ right_rob = Stack("Right rob", 100)
 robs_list = [left_rob, middle_rob, right_rob]
 
 # input the number of disks
-the_number_of_disks = 5
-# the_number_of_disks = int(input("How many disks?\n"))
+# the_number_of_disks = 5
+the_number_of_disks = int(input("How many disks?\n"))
 while the_number_of_disks < 3:
     print("The number of disks must be greater than 2")
     the_number_of_disks = int(input("How many disks?\n"))
@@ -41,14 +41,22 @@ def input_the_rob():
 while robs_list[-1].size != the_number_of_disks:
     display_current_position_of_disks_on_robs()
 
-    print("What robs do you want to pick disk from?")
-    rob_chosen_for_pickup = input_the_rob()
+    while True:
+        print("What robs do you want to pick disk from?")
+        rob_chosen_for_pickup = input_the_rob()
+        if not rob_chosen_for_pickup.is_empty():
+            break
+        print("The rob you chosen is empty.")
 
-    print("What robs do you want to pick disk to?")
-    rob_chosen_for_push = input_the_rob()
-    rob_chosen_for_push.push(rob_chosen_for_pickup.pop())
+    while True:
+        print("What robs do you want to pick disk to?")
+        rob_chosen_for_push = input_the_rob()
+        if rob_chosen_for_push.is_empty() or int(rob_chosen_for_push.peek()) > int(rob_chosen_for_pickup.peek()):
+            rob_chosen_for_push.push(rob_chosen_for_pickup.pop())
+            break
+        print("The rob you chosen for pushing have the less value of disks on top")
 
-
+    print("Mission Completed.")
 
 
 
