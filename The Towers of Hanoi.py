@@ -31,7 +31,7 @@ for rob in robs_list:
 
 # user의 input을 받는 method
 def input_the_rob():
-    user_input = input()
+    user_input = ''
     first_letter_of_robs_list = [rob.name[0] for rob in robs_list]
     while user_input not in first_letter_of_robs_list:
         print("Input the first letter of the rob")
@@ -40,4 +40,16 @@ def input_the_rob():
         if user_input == rob.name[0]:
             return rob
 
-print(input_the_rob())
+
+while robs_list[-1].size != the_number_of_disks:
+    print("What robs do you want to pick disk from?")
+    rob_chosen_for_pickup = input_the_rob()
+
+    print("What robs do you want to pick disk to?")
+    rob_chosen_for_push = input_the_rob()
+    rob_chosen_for_push.push(rob_chosen_for_pickup.pop())
+
+
+
+
+
