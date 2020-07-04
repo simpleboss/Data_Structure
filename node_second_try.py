@@ -13,6 +13,6 @@ class Node:
         self.next_node = next_node
 
 
-node1 = Node("Gichan")
-node2 = Node("Gimoon", node1)
-print(node2.get_next_node().get_value())
+# node1 = Node("Gichan")
+# node2 = Node("Gimoon", node1)
+# print(node2.get_next_node().get_value())
